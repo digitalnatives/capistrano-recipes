@@ -1,13 +1,16 @@
 require 'capistrano'
 require 'capistrano/recipes/version'
 
-cap = Capistrano::Configuration.instance(true)
-cap.load 'capistrano/recipes/base'
-cap.load 'capistrano/recipes/logs'
+Capistrano::Configuration.instance(true).load do
+  load_paths << File.expand_path('../..', __FILE__)
 
-# cap.load 'capistrano/recipes/assets'
-# cap.load 'capistrano/recipes/database'
-# cap.load 'capistrano/recipes/rvm'
-# cap.load 'capistrano/recipes/subdirectory'
-# cap.load 'capistrano/recipes/unicorn'
+  load 'capistrano/recipes/base'
+  load 'capistrano/recipes/logs'
+
+  # load 'capistrano/recipes/assets'
+  # load 'capistrano/recipes/database'
+  # load 'capistrano/recipes/rvm'
+  # load 'capistrano/recipes/subdirectory'
+  # load 'capistrano/recipes/unicorn'
+end
 
