@@ -1,0 +1,14 @@
+#!/usr/bin/env puma
+
+environment '<%= stage %>'
+threads 0, 16
+workers <%= puma_workers %>
+
+bind 'unix://<%= current_path %>/tmp/puma/socket'
+
+pidfile     '<%= current_path %>/tmp/puma/pid'
+state_path  '<%= current_path %>/tmp/puma/state'
+
+preload_app!
+
+activate_control_app
