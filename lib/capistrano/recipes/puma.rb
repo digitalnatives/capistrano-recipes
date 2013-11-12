@@ -1,4 +1,4 @@
-set_default(:puma_app_name)      { fetch(:application) }
+set_default(:puma_app_name)      { "#{application}-#{rails_env}" }
 set_default(:shared_puma_config) { "#{shared_path}/config/puma.rb" }
 set_default(:puma_config)        { "#{current_path}/config/puma.rb" }
 
