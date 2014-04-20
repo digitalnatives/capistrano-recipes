@@ -1,0 +1,15 @@
+---
+pid: <%= thin_pid %>
+address: 0.0.0.0
+timeout: <% thin_timeout %>
+wait: <% thin_wait %>
+port: <%= thin_port %>
+log: <%= thin_log %>
+max_conns: <%= thin_max_conn %>
+require: []
+
+environment: <%= stage %>
+max_persistent_conns: <%= thin_max_persistent_conns %>
+server: <%= thin_server %>
+daemonize: <%= thin_demonize %>
+chdir: <%= current_path %>
